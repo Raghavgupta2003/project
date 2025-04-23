@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":" BURGER",
+        "price": "59",
+        "image": "image/1.png"
+    },
+    {
+        "id": 2,
+        "name":" PIZZA",
+        "price": 139,
+        "image": "image/2.png"
+    },
+    {
+        "id": 3,
+        "name":" FRENCH FRIES",
+        "price": 59,
+        "image": "image/3.png"
+    },
+    {
+        "id": 4,
+        "name":" DOSA",
+        "price": 70,
+        "image": "image/4.png"
+    },
+    {
+        "id": 5,
+        "name":" WOFFLE",
+        "price": 109,
+        "image": "image/5.png"
+    },
+    {
+        "id": 6,
+        "name":" PASTA",
+        "price": 59,
+        "image": "image/6.png"
+    },
+    {
+        "id": 7,
+        "name":" COLD DRINK",
+        "price": 45,
+        "image": "image/7.png"
+    },
+    {
+        "id": 8,
+        "name":" GULAB JAMUN",
+        "price": 20,
+        "image": "image/8.png"
+    }
+
+]
