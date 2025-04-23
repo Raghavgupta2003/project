@@ -2,19 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Docker Cleanup') {
+        stage('Build Docker Image') {
             steps {
-                bat '''
-                docker stop food || echo Container not running
-                docker rm food || echo No container to remove
-                docker rmi -f food || echo No image to remove
-                '''
+                bat 'docker build -t food .'
             }
         }
 
-        stage('Build Image') {
+        stage('Push to Docker Hub') {
             steps {
-                bat 'docker build -t food .'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    bat '''
+                        docker login -u %DOCKER_USER% -p %DOCKER_PASS%
+                        docker tag food %DOCKER_USER%/food
+                        docker push %DOCKER_USER%/food
+                    '''
+                }
             }
         }
 
